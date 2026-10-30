@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malak Tamer | Full-Stack & Web Developer</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts (Typography Mix) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+
+    <!-- AOS Animation Library -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            950: '#070a14',
+                            900: '#0a0f1d',
+                            800: '#0f172a',
+                            700: '#1e293b',
+                            600: '#334155'
+                        },
+                        pink: {
+                            DEFAULT: '#ec4899',
+                            hover: '#db2777',
+                            light: '#f472b6',
+                            glow: 'rgba(236, 72, 153, 0.4)'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        display: ['Syne', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #070a14;
+            color: #f8fafc;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Animated Ambient Glowing Orbs */
+        .glow-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(90px);
+            pointer-events: none;
+            z-index: 0;
+            animation: floatGlow 10s infinite alternate ease-in-out;
+        }
+
+        .glow-1 {
+            top: -5%;
+            right: -5%;
+            width: 450px;
+            height: 450px;
+            background: radial-gradient(circle, rgba(236, 72, 153, 0.25) 0%, rgba(0,0,0,0) 70%);
+        }
+
+        .glow-2 {
+            top: 45%;
+            left: -10%;
+            width: 550px;
+            height: 550px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.2) 0%, rgba(0,0,0,0) 70%);
+            animation-delay: -5s;
+        }
+
+        @keyframes floatGlow {
+            0% { transform: translateY(0px) scale(1); }
+            100% { transform: translateY(35px) scale(1.08); }
+        }
+
+        /* Glassmorphism Dynamic Cards */
+        .glass-card {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .glass-card:hover {
+            border-color: rgba(236, 72, 153, 0.5);
+            box-shadow: 0 20px 40px -15px rgba(236, 72, 153, 0.25);
+            transform: translateY(-8px);
+        }
+
+        .glass-nav {
+            background: rgba(7, 10, 20, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Glowing Animated Buttons */
+        .btn-pink {
+            background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);
+            color: #ffffff;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(236, 72, 153, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-pink::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: 0.5s;
+        }
+
+        .btn-pink:hover::before {
+            left: 100%;
+        }
+
+        .btn-pink:hover {
+            box-shadow: 0 6px 30px rgba(236, 72, 153, 0.65);
+            transform: translateY(-3px);
+        }
+
+        .btn-outline-pink {
+            border: 2px solid #ec4899;
+            color: #ec4899;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline-pink:hover {
+            background-color: rgba(236, 72, 153, 0.15);
+            color: #ffffff;
+            border-color: #f472b6;
+            box-shadow: 0 0 20px rgba(236, 72, 153, 0.4);
+            transform: translateY(-3px);
+        }
+
+        /* Cursor Typing Pulse */
+        .typed-cursor {
+            color: #ec4899;
+            animation: blink 0.7s infinite;
+        }
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+    </style>
+</head>
+<body class="relative min-h-screen text-slate-100">
+
+    <!-- Background Ambient Glows -->
+    <div class="glow-orb glow-1"></div>
+    <div class="glow-orb glow-2"></div>
+
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glass-nav py-4 px-6 md:px-12 transition-all duration-300">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="#" class="font-display text-2xl font-extrabold tracking-wider text-white">
+                MALAK<span class="text-pink animate-pulse">.</span>
+            </a>
+            
+            <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                <a href="#about" class="text-gray-300 hover:text-pink transition-colors">About</a>
+                <a href="#services" class="text-gray-300 hover:text-pink transition-colors">Services</a>
+                <a href="#projects" class="text-gray-300 hover:text-pink transition-colors">Projects</a>
+                <a href="#contact" class="text-gray-300 hover:text-pink transition-colors">Contact</a>
+            </div>
+
+            <a href="https://wa.me/201224419331" target="_blank" class="btn-pink px-6 py-2.5 rounded-full text-sm font-semibold flex items-center space-x-2">
+                <i class="fab fa-whatsapp text-lg"></i>
+                <span>Let's Talk</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="about" class="pt-36 pb-20 px-6 md:px-12 max-w-7xl mx-auto relative z-10 min-h-screen flex items-center">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <!-- Left Info Column -->
+            <div class="lg:col-span-7 space-y-6" data-aos="fade-right" data-aos-duration="1000">
+                <div class="inline-flex items-center space-x-2 px-4 py-2 rounded-full glass-card border border-pink/30 text-pink font-mono text-xs font-semibold tracking-wide">
+                    <span class="w-2 h-2 rounded-full bg-pink animate-ping"></span>
+                    <span>Available for Freelance Projects</span>
+                </div>
+                
+                <h1 class="font-display text-4xl sm:text-6xl font-extrabold leading-tight tracking-tight">
+                    Crafting High-Performance <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-pink via-pink-light to-indigo-400" id="typed-text"></span><span class="typed-cursor">|</span>
+                </h1>
+                
+                <p class="text-slate-400 text-lg max-w-2xl leading-relaxed">
+                    Hi, I'm <strong class="text-white font-semibold">Malak Tamer</strong>, a Full-Stack Web Developer. I build modern, responsive, and high-converting web applications customized for your business growth and digital presence.
+                </p>
+
+                <!-- Action Buttons -->
+                <div class="flex flex-wrap gap-4 pt-4">
+                    <a href="https://wa.me/201224419331" target="_blank" class="btn-pink px-8 py-4 rounded-xl font-bold flex items-center space-x-3 text-base">
+                        <i class="fab fa-whatsapp text-xl"></i>
+                        <span>Start Your Website</span>
+                    </a>
+                    
+                    <a href="#projects" class="btn-outline-pink px-8 py-4 rounded-xl font-bold flex items-center space-x-3 text-base">
+                        <i class="fas fa-laptop-code"></i>
+                        <span>View Portfolio</span>
+                    </a>
+                </div>
+
+                <!-- Contact Badges -->
+                <div class="pt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <a href="tel:01224419331" class="glass-card p-4 rounded-xl flex items-center space-x-4">
+                        <div class="w-12 h-12 rounded-lg bg-pink/10 flex items-center justify-center text-pink text-xl">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs font-mono text-slate-400">Direct Phone</p>
+                            <p class="text-sm font-semibold text-white">01224419331</p>
+                        </div>
+                    </a>
+
+                    <a href="mailto:malakkelmelegy@gmail.com" class="glass-card p-4 rounded-xl flex items-center space-x-4">
+                        <div class="w-12 h-12 rounded-lg bg-pink/10 flex items-center justify-center text-pink text-xl">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="overflow-hidden">
+                            <p class="text-xs font-mono text-slate-400">Official Email</p>
+                            <p class="text-sm font-semibold text-white truncate">malakkelmelegy@gmail.com</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Profile Image Column -->
+            <div class="lg:col-span-5 flex justify-center" data-aos="fade-left" data-aos-duration="1000">
+                <div class="relative w-full max-w-md">
+                    <!-- Glowing Outline Animation -->
+                    <div class="absolute -inset-1 rounded-3xl bg-gradient-to-r from-pink via-purple-600 to-indigo-600 opacity-60 blur-lg animate-pulse"></div>
+                    
+                    <div class="relative rounded-3xl overflow-hidden glass-card p-3 border border-white/10">
+                        <img src="malak.png" alt="Malak Tamer" class="w-full h-[480px] object-cover rounded-2xl hover:scale-105 transition duration-500" />
+                        
+                        <!-- Floating Badge -->
+                        <div class="absolute bottom-6 left-6 right-6 glass-card p-4 rounded-xl border border-white/10 flex items-center justify-between">
+                            <div>
+                                <p class="text-xs font-mono text-pink">Specialization</p>
+                                <p class="text-sm font-bold text-white">Full-Stack Web Developer</p>
+                            </div>
+                            <div class="w-10 h-10 rounded-full bg-pink flex items-center justify-center text-white shadow-lg shadow-pink/50">
+                                <i class="fas fa-check"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 px-6 md:px-12 max-w-7xl mx-auto relative z-10">
+        <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+            <h2 class="text-pink font-mono text-sm font-semibold uppercase tracking-widest mb-2">// My Expertise</h2>
+            <h3 class="font-display text-3xl md:text-5xl font-extrabold">What I Can Build For You</h3>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="glass-card p-8 rounded-2xl" data-aos="fade-up" data-aos-delay="100">
+                <div class="w-14 h-14 rounded-xl bg-pink/10 text-pink flex items-center justify-center text-2xl mb-6">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h4 class="font-display text-xl font-bold mb-3">Custom Web Apps</h4>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    Tailor-made, responsive, and ultra-fast web applications built with modern technologies to fit your brand identity.
+                </p>
+            </div>
+
+            <div class="glass-card p-8 rounded-2xl" data-aos="fade-up" data-aos-delay="200">
+                <div class="w-14 h-14 rounded-xl bg-pink/10 text-pink flex items-center justify-center text-2xl mb-6">
+                    <i class="fas fa-paint-brush"></i>
+                </div>
+                <h4 class="font-display text-xl font-bold mb-3">UI/UX & Frontend</h4>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    Eye-catching interfaces focused on smooth animations, clean component architectures, and optimal user experience.
+                </p>
+            </div>
+
+            <div class="glass-card p-8 rounded-2xl" data-aos="fade-up" data-aos-delay="300">
+                <div class="w-14 h-14 rounded-xl bg-pink/10 text-pink flex items-center justify-center text-2xl mb-6">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <h4 class="font-display text-xl font-bold mb-3">High-Converting Portfolios</h4>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    Modern landing pages and business platforms designed to present your brand and turn visitors into clients.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects Section -->
+    <section id="projects" class="py-24 px-6 md:px-12 max-w-7xl mx-auto relative z-10">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-16" data-aos="fade-up">
+            <div>
+                <h2 class="text-pink font-mono text-sm font-semibold uppercase tracking-widest mb-2">// Live Projects</h2>
+                <h3 class="font-display text-3xl md:text-5xl font-extrabold">Explore Recent Work</h3>
+            </div>
+            <p class="text-slate-400 text-sm max-w-md mt-4 md:mt-0">
+                Real-world web solutions developed with clean code architecture and seamless interactive UI.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            
+            <!-- Project Card 1 -->
+            <div class="glass-card rounded-2xl overflow-hidden group" data-aos="fade-up" data-aos-delay="100">
+                <div class="relative h-72 overflow-hidden bg-navy-900">
+                    <iframe src="https://tyre-x6ds.vercel.app" class="w-full h-full border-0 pointer-events-none scale-100 group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100" title="Tyre Project Preview"></iframe>
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/20 to-transparent"></div>
+                </div>
+                <div class="p-8">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <span class="text-xs font-mono font-semibold text-pink uppercase tracking-wider">Web Application</span>
+                            <h4 class="font-display text-2xl font-bold mt-1">Tyre Platform</h4>
+                        </div>
+                        <a href="https://tyre-x6ds.vercel.app" target="_blank" class="w-10 h-10 rounded-full bg-pink/20 hover:bg-pink text-pink hover:text-white flex items-center justify-center transition">
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                    <p class="text-slate-400 text-sm mb-6">
+                        A modern dynamic web portal designed for smooth user interaction and fast load performance.
+                    </p>
+                    <a href="https://tyre-x6ds.vercel.app" target="_blank" class="btn-pink w-full py-3.5 rounded-xl font-semibold flex items-center justify-center space-x-2 text-sm">
+                        <span>Visit Live Project</span>
+                        <i class="fas fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Project Card 2 -->
+            <div class="glass-card rounded-2xl overflow-hidden group" data-aos="fade-up" data-aos-delay="200">
+                <div class="relative h-72 overflow-hidden bg-navy-900">
+                    <iframe src="https://graphic-baqm.vercel.app" class="w-full h-full border-0 pointer-events-none scale-100 group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100" title="Graphic Project Preview"></iframe>
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/20 to-transparent"></div>
+                </div>
+                <div class="p-8">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <span class="text-xs font-mono font-semibold text-pink uppercase tracking-wider">Design & Interactive Solution</span>
+                            <h4 class="font-display text-2xl font-bold mt-1">Graphic Showroom</h4>
+                        </div>
+                        <a href="https://graphic-baqm.vercel.app" target="_blank" class="w-10 h-10 rounded-full bg-pink/20 hover:bg-pink text-pink hover:text-white flex items-center justify-center transition">
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                    <p class="text-slate-400 text-sm mb-6">
+                        An interactive showcase highlighting sleek components, smooth visual layouts, and responsive design.
+                    </p>
+                    <a href="https://graphic-baqm.vercel.app" target="_blank" class="btn-pink w-full py-3.5 rounded-xl font-semibold flex items-center justify-center space-x-2 text-sm">
+                        <span>Visit Live Project</span>
+                        <i class="fas fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Call to Action / Contact Banner -->
+    <section id="contact" class="py-20 px-6 md:px-12 max-w-7xl mx-auto relative z-10" data-aos="zoom-in">
+        <div class="glass-card rounded-3xl p-8 md:p-16 border border-pink/30 relative overflow-hidden text-center">
+            <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-pink/20 rounded-full blur-3xl pointer-events-none"></div>
+            
+            <h2 class="font-display text-3xl md:text-5xl font-extrabold mb-6">Have a Project Idea in Mind?</h2>
+            <p class="text-slate-300 text-base md:text-lg max-w-2xl mx-auto mb-10">
+                Let's build your vision with a modern, high-end website. Feel free to drop a message directly on WhatsApp!
+            </p>
+
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="https://wa.me/201224419331?text=Hello%20Malak,%20I%20would%20like%20to%20discuss%20a%20website%20project." target="_blank" class="btn-pink px-10 py-4 rounded-xl font-bold text-lg flex items-center space-x-3 w-full sm:w-auto justify-center">
+                    <i class="fab fa-whatsapp text-2xl"></i>
+                    <span>Chat on WhatsApp</span>
+                </a>
+
+                <a href="mailto:malakkelmelegy@gmail.com" class="btn-outline-pink px-8 py-4 rounded-xl font-bold text-lg flex items-center space-x-3 w-full sm:w-auto justify-center">
+                    <i class="fas fa-envelope"></i>
+                    <span>Send Email</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 border-t border-white/5 text-center font-mono text-xs text-slate-500 relative z-10">
+        <p>© 2026 Malak Tamer. All Rights Reserved.</p>
+    </footer>
+
+    <!-- AOS Script for Scroll Animations -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        // Initialize Scroll Animations
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+
+        // Typewriter Effect Script
+        const words = ["Web Applications", "User Interfaces", "Digital Experiences"];
+        let wordIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typedTextElement = document.getElementById("typed-text");
+
+        function typeEffect() {
+            const currentWord = words[wordIndex];
+            
+            if (isDeleting) {
+                typedTextElement.textContent = currentWord.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typedTextElement.textContent = currentWord.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            let typeSpeed = isDeleting ? 60 : 120;
+
+            if (!isDeleting && charIndex === currentWord.length) {
+                typeSpeed = 2000; // Pause at end of word
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                wordIndex = (wordIndex + 1) % words.length;
+                typeSpeed = 500;
+            }
+
+            setTimeout(typeEffect, typeSpeed);
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            typeEffect();
+        });
+    </script>
+</body>
+</html>
