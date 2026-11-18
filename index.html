@@ -19,6 +19,9 @@
     <!-- AOS Animation Library -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
+    <!-- Swiper.js CSS for Certificates Slider -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
     <script>
         tailwind.config = {
             theme: {
@@ -159,6 +162,17 @@
         @keyframes blink {
             50% { opacity: 0; }
         }
+
+        /* Custom Swiper Pagination Styling */
+        .swiper-pagination-bullet {
+            background: #64748b !important;
+            opacity: 1;
+        }
+        .swiper-pagination-bullet-active {
+            background: #ec4899 !important;
+            width: 24px;
+            border-radius: 4px;
+        }
     </style>
 </head>
 <body class="relative min-h-screen text-slate-100">
@@ -177,6 +191,7 @@
             <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
                 <a href="#about" class="text-gray-300 hover:text-pink transition-colors">About</a>
                 <a href="#services" class="text-gray-300 hover:text-pink transition-colors">Services</a>
+                <a href="#certificates" class="text-gray-300 hover:text-pink transition-colors">Certificates</a>
                 <a href="#projects" class="text-gray-300 hover:text-pink transition-colors">Projects</a>
                 <a href="#contact" class="text-gray-300 hover:text-pink transition-colors">Contact</a>
             </div>
@@ -205,7 +220,7 @@
                 </h1>
                 
                 <p class="text-slate-400 text-lg max-w-2xl leading-relaxed">
-                    Hi, I'm <strong class="text-white font-semibold">Malak Tamer</strong>, a Full-Stack Web Developer. I build modern, responsive, and high-converting web applications customized for your business growth and digital presence.
+                    Hi, I'm <strong class="text-white font-semibold">Malak Tamer</strong>, a Full-Stack Web Developer specialized in UI/UX Design, Frontend (React), and Backend (.NET). I build modern, responsive, and high-converting web applications customized for your business growth.
                 </p>
 
                 <!-- Action Buttons -->
@@ -248,17 +263,15 @@
             <!-- Right Profile Image Column -->
             <div class="lg:col-span-5 flex justify-center" data-aos="fade-left" data-aos-duration="1000">
                 <div class="relative w-full max-w-md">
-                    <!-- Glowing Outline Animation -->
                     <div class="absolute -inset-1 rounded-3xl bg-gradient-to-r from-pink via-purple-600 to-indigo-600 opacity-60 blur-lg animate-pulse"></div>
                     
                     <div class="relative rounded-3xl overflow-hidden glass-card p-3 border border-white/10">
                         <img src="malak.png" alt="Malak Tamer" class="w-full h-[480px] object-cover rounded-2xl hover:scale-105 transition duration-500" />
                         
-                        <!-- Floating Badge -->
                         <div class="absolute bottom-6 left-6 right-6 glass-card p-4 rounded-xl border border-white/10 flex items-center justify-between">
                             <div>
                                 <p class="text-xs font-mono text-pink">Specialization</p>
-                                <p class="text-sm font-bold text-white">Full-Stack Web Developer</p>
+                                <p class="text-sm font-bold text-white">UI/UX & Full-Stack .NET/React</p>
                             </div>
                             <div class="w-10 h-10 rounded-full bg-pink flex items-center justify-center text-white shadow-lg shadow-pink/50">
                                 <i class="fas fa-check"></i>
@@ -281,33 +294,243 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div class="glass-card p-8 rounded-2xl" data-aos="fade-up" data-aos-delay="100">
                 <div class="w-14 h-14 rounded-xl bg-pink/10 text-pink flex items-center justify-center text-2xl mb-6">
-                    <i class="fas fa-code"></i>
+                    <i class="fas fa-paint-brush"></i>
                 </div>
-                <h4 class="font-display text-xl font-bold mb-3">Custom Web Apps</h4>
+                <h4 class="font-display text-xl font-bold mb-3">UI/UX Design</h4>
                 <p class="text-slate-400 text-sm leading-relaxed">
-                    Tailor-made, responsive, and ultra-fast web applications built with modern technologies to fit your brand identity.
+                    Crafting user-centered interfaces, wireframes, and design systems focused on seamless user experiences and modern aesthetics.
                 </p>
             </div>
 
             <div class="glass-card p-8 rounded-2xl" data-aos="fade-up" data-aos-delay="200">
                 <div class="w-14 h-14 rounded-xl bg-pink/10 text-pink flex items-center justify-center text-2xl mb-6">
-                    <i class="fas fa-paint-brush"></i>
+                    <i class="fab fa-react"></i>
                 </div>
-                <h4 class="font-display text-xl font-bold mb-3">UI/UX & Frontend</h4>
+                <h4 class="font-display text-xl font-bold mb-3">Frontend Development (React)</h4>
                 <p class="text-slate-400 text-sm leading-relaxed">
-                    Eye-catching interfaces focused on smooth animations, clean component architectures, and optimal user experience.
+                    Building dynamic, responsive, and high-performance single-page applications with clean component architecture and smooth state management.
                 </p>
             </div>
 
             <div class="glass-card p-8 rounded-2xl" data-aos="fade-up" data-aos-delay="300">
                 <div class="w-14 h-14 rounded-xl bg-pink/10 text-pink flex items-center justify-center text-2xl mb-6">
-                    <i class="fas fa-rocket"></i>
+                    <i class="fas fa-server"></i>
                 </div>
-                <h4 class="font-display text-xl font-bold mb-3">High-Converting Portfolios</h4>
+                <h4 class="font-display text-xl font-bold mb-3">Backend Development (.NET)</h4>
                 <p class="text-slate-400 text-sm leading-relaxed">
-                    Modern landing pages and business platforms designed to present your brand and turn visitors into clients.
+                    Developing robust, secure, and scalable server-side solutions, RESTful APIs, and database structures using C# and .NET.
                 </p>
             </div>
+        </div>
+    </section>
+
+    <!-- Certificates Slider Section -->
+    <section id="certificates" class="py-24 px-6 md:px-12 max-w-7xl mx-auto relative z-10">
+        <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+            <h2 class="text-pink font-mono text-sm font-semibold uppercase tracking-widest mb-2">// Credentials & Courses</h2>
+            <h3 class="font-display text-3xl md:text-5xl font-extrabold">Professional Certifications</h3>
+            <p class="text-slate-400 text-sm mt-4">
+                Explore my certified expertise across UI/UX, Frontend React, and Backend .NET with verified issuer details and certificate previews.
+            </p>
+        </div>
+
+        <!-- Swiper Slider Container -->
+        <div class="swiper certificates-swiper py-4" data-aos="fade-up">
+            <div class="swiper-wrapper">
+                
+                <!-- Certificate 1 -->
+                <div class="swiper-slide">
+                    <div class="glass-card rounded-2xl overflow-hidden h-full flex flex-col justify-between border border-pink/20">
+                        <div class="relative h-44 bg-navy-900 overflow-hidden group">
+                            <img src="cer1.png" alt="UI/UX Advanced Design Certificate" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=600&q=80'" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-transparent to-transparent"></div>
+                            <span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-navy-950/80 backdrop-blur-md text-pink font-mono text-xs font-semibold">CER 1</span>
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center space-x-2 text-xs font-mono text-pink mb-2">
+                                    <i class="fas fa-university"></i>
+                                    <span>Issued by: Information Technology Institute (ITI)</span>
+                                </div>
+                                <h4 class="font-display text-lg font-bold mb-2">UI/UX Advanced Design</h4>
+                                <p class="text-slate-400 text-xs leading-relaxed">
+                                    Specialized training focusing on user research, wireframing, interactive prototyping, and modern design systems.
+                                </p>
+                            </div>
+                            <div class="mt-6 pt-3 border-t border-white/5 flex items-center justify-between text-xs font-mono text-slate-400">
+                                <span class="text-pink flex items-center"><i class="fas fa-check-circle mr-1"></i> Verified</span>
+                                <span>2026</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certificate 2 -->
+                <div class="swiper-slide">
+                    <div class="glass-card rounded-2xl overflow-hidden h-full flex flex-col justify-between border border-pink/20">
+                        <div class="relative h-44 bg-navy-900 overflow-hidden group">
+                            <img src="cer2.png" alt="Frontend React Masterclass Certificate" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='https://images.unsplash.com/photo-1633356122544-f134324a6cee?auto=format&fit=crop&w=600&q=80'" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-transparent to-transparent"></div>
+                            <span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-navy-950/80 backdrop-blur-md text-pink font-mono text-xs font-semibold">CER 2</span>
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center space-x-2 text-xs font-mono text-pink mb-2">
+                                    <i class="fas fa-university"></i>
+                                    <span>Issued by: Route Academy</span>
+                                </div>
+                                <h4 class="font-display text-lg font-bold mb-2">Frontend React Masterclass</h4>
+                                <p class="text-slate-400 text-xs leading-relaxed">
+                                    Advanced course covering React components, hooks, routing, state management, and modern styling frameworks.
+                                </p>
+                            </div>
+                            <div class="mt-6 pt-3 border-t border-white/5 flex items-center justify-between text-xs font-mono text-slate-400">
+                                <span class="text-pink flex items-center"><i class="fas fa-check-circle mr-1"></i> Verified</span>
+                                <span>2026</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certificate 3 -->
+                <div class="swiper-slide">
+                    <div class="glass-card rounded-2xl overflow-hidden h-full flex flex-col justify-between border border-pink/20">
+                        <div class="relative h-44 bg-navy-900 overflow-hidden group">
+                            <img src="cer3.png" alt="Backend .NET Architecture Certificate" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=600&q=80'" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-transparent to-transparent"></div>
+                            <span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-navy-950/80 backdrop-blur-md text-pink font-mono text-xs font-semibold">CER 3</span>
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center space-x-2 text-xs font-mono text-pink mb-2">
+                                    <i class="fas fa-university"></i>
+                                    <span>Issued by: National Bank of Egypt (NBE RBA)</span>
+                                </div>
+                                <h4 class="font-display text-lg font-bold mb-2">Backend .NET Architecture</h4>
+                                <p class="text-slate-400 text-xs leading-relaxed">
+                                    Comprehensive training in C#, Entity Framework Core, LINQ, and building secure RESTful web APIs.
+                                </p>
+                            </div>
+                            <div class="mt-6 pt-3 border-t border-white/5 flex items-center justify-between text-xs font-mono text-slate-400">
+                                <span class="text-pink flex items-center"><i class="fas fa-check-circle mr-1"></i> Verified</span>
+                                <span>2026</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certificate 4 -->
+                <div class="swiper-slide">
+                    <div class="glass-card rounded-2xl overflow-hidden h-full flex flex-col justify-between border border-pink/20">
+                        <div class="relative h-44 bg-navy-900 overflow-hidden group">
+                            <img src="cer4.png" alt="Full-Stack Integration Certificate" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=600&q=80'" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-transparent to-transparent"></div>
+                            <span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-navy-950/80 backdrop-blur-md text-pink font-mono text-xs font-semibold">CER 4</span>
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center space-x-2 text-xs font-mono text-pink mb-2">
+                                    <i class="fas fa-university"></i>
+                                    <span>Issued by: CIB Bank (IT Department)</span>
+                                </div>
+                                <h4 class="font-display text-lg font-bold mb-2">Full-Stack Integration</h4>
+                                <p class="text-slate-400 text-xs leading-relaxed">
+                                    Practical course connecting React frontends with .NET robust backend services for complete web ecosystems.
+                                </p>
+                            </div>
+                            <div class="mt-6 pt-3 border-t border-white/5 flex items-center justify-between text-xs font-mono text-slate-400">
+                                <span class="text-pink flex items-center"><i class="fas fa-check-circle mr-1"></i> Verified</span>
+                                <span>2026</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certificate 5 -->
+                <div class="swiper-slide">
+                    <div class="glass-card rounded-2xl overflow-hidden h-full flex flex-col justify-between border border-pink/20">
+                        <div class="relative h-44 bg-navy-900 overflow-hidden group">
+                            <img src="cer5.png" alt="Database Management & SQL Certificate" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='https://images.unsplash.com/photo-1544383835-bda2bc66a55d?auto=format&fit=crop&w=600&q=80'" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-transparent to-transparent"></div>
+                            <span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-navy-950/80 backdrop-blur-md text-pink font-mono text-xs font-semibold">CER 5</span>
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center space-x-2 text-xs font-mono text-pink mb-2">
+                                    <i class="fas fa-university"></i>
+                                    <span>Issued by: Misr University for Science & Technology</span>
+                                </div>
+                                <h4 class="font-display text-lg font-bold mb-2">Database Management & SQL</h4>
+                                <p class="text-slate-400 text-xs leading-relaxed">
+                                    Advanced database design, query optimization, indexing, and seamless integration with backend applications.
+                                </p>
+                            </div>
+                            <div class="mt-6 pt-3 border-t border-white/5 flex items-center justify-between text-xs font-mono text-slate-400">
+                                <span class="text-pink flex items-center"><i class="fas fa-check-circle mr-1"></i> Verified</span>
+                                <span>2026</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certificate 6 -->
+                <div class="swiper-slide">
+                    <div class="glass-card rounded-2xl overflow-hidden h-full flex flex-col justify-between border border-pink/20">
+                        <div class="relative h-44 bg-navy-900 overflow-hidden group">
+                            <img src="cer6.png" alt="Web Security & APIs Certificate" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600&q=80'" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-transparent to-transparent"></div>
+                            <span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-navy-950/80 backdrop-blur-md text-pink font-mono text-xs font-semibold">CER 6</span>
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center space-x-2 text-xs font-mono text-pink mb-2">
+                                    <i class="fas fa-university"></i>
+                                    <span>Issued by: British University in Egypt (BUE)</span>
+                                </div>
+                                <h4 class="font-display text-lg font-bold mb-2">Web Security & APIs</h4>
+                                <p class="text-slate-400 text-xs leading-relaxed">
+                                    Specialized focus on JWT authentication, authorization policies, and securing web application endpoints.
+                                </p>
+                            </div>
+                            <div class="mt-6 pt-3 border-t border-white/5 flex items-center justify-between text-xs font-mono text-slate-400">
+                                <span class="text-pink flex items-center"><i class="fas fa-check-circle mr-1"></i> Verified</span>
+                                <span>2026</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certificate 7 -->
+                <div class="swiper-slide">
+                    <div class="glass-card rounded-2xl overflow-hidden h-full flex flex-col justify-between border border-pink/20">
+                        <div class="relative h-44 bg-navy-900 overflow-hidden group">
+                            <img src="cer7.png" alt="UI/UX to Code Workflow Certificate" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?auto=format&fit=crop&w=600&q=80'" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-transparent to-transparent"></div>
+                            <span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-navy-950/80 backdrop-blur-md text-pink font-mono text-xs font-semibold">CER 7</span>
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center space-x-2 text-xs font-mono text-pink mb-2">
+                                    <i class="fas fa-university"></i>
+                                    <span>Issued by: Instant UI/UX Academy</span>
+                                </div>
+                                <h4 class="font-display text-lg font-bold mb-2">UI/UX to Code Workflow</h4>
+                                <p class="text-slate-400 text-xs leading-relaxed">
+                                    Bridging the gap between design prototypes and clean React implementation with optimal responsiveness.
+                                </p>
+                            </div>
+                            <div class="mt-6 pt-3 border-t border-white/5 flex items-center justify-between text-xs font-mono text-slate-400">
+                                <span class="text-pink flex items-center"><i class="fas fa-check-circle mr-1"></i> Verified</span>
+                                <span>2026</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+            <!-- Pagination Dots -->
+            <div class="swiper-pagination mt-10 relative"></div>
         </div>
     </section>
 
@@ -325,7 +548,7 @@
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
             
-            <!-- Project Card 1 -->
+            <!-- Project Card 1: Tyre Platform -->
             <div class="glass-card rounded-2xl overflow-hidden group" data-aos="fade-up" data-aos-delay="100">
                 <div class="relative h-72 overflow-hidden bg-navy-900">
                     <iframe src="https://tyre-x6ds.vercel.app" class="w-full h-full border-0 pointer-events-none scale-100 group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100" title="Tyre Project Preview"></iframe>
@@ -351,7 +574,7 @@
                 </div>
             </div>
 
-            <!-- Project Card 2 -->
+            <!-- Project Card 2: Graphic Showroom -->
             <div class="glass-card rounded-2xl overflow-hidden group" data-aos="fade-up" data-aos-delay="200">
                 <div class="relative h-72 overflow-hidden bg-navy-900">
                     <iframe src="https://graphic-baqm.vercel.app" class="w-full h-full border-0 pointer-events-none scale-100 group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100" title="Graphic Project Preview"></iframe>
@@ -371,6 +594,58 @@
                         An interactive showcase highlighting sleek components, smooth visual layouts, and responsive design.
                     </p>
                     <a href="https://graphic-baqm.vercel.app" target="_blank" class="btn-pink w-full py-3.5 rounded-xl font-semibold flex items-center justify-center space-x-2 text-sm">
+                        <span>Visit Live Project</span>
+                        <i class="fas fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Project Card 3: HOME Shop -->
+            <div class="glass-card rounded-2xl overflow-hidden group" data-aos="fade-up" data-aos-delay="300">
+                <div class="relative h-72 overflow-hidden bg-navy-900">
+                    <iframe src="https://house-nqv9.vercel.app" class="w-full h-full border-0 pointer-events-none scale-100 group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100" title="HOME Shop Project Preview"></iframe>
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/20 to-transparent"></div>
+                </div>
+                <div class="p-8">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <span class="text-xs font-mono font-semibold text-pink uppercase tracking-wider">E-Commerce Platform</span>
+                            <h4 class="font-display text-2xl font-bold mt-1">HOME Shop | Premium Furniture</h4>
+                        </div>
+                        <a href="https://house-nqv9.vercel.app" target="_blank" class="w-10 h-10 rounded-full bg-pink/20 hover:bg-pink text-pink hover:text-white flex items-center justify-center transition">
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                    <p class="text-slate-400 text-sm mb-6">
+                        A premium e-commerce platform for high-end home furniture featuring elegant UI and seamless catalog navigation[cite: 4].
+                    </p>
+                    <a href="https://house-nqv9.vercel.app" target="_blank" class="btn-pink w-full py-3.5 rounded-xl font-semibold flex items-center justify-center space-x-2 text-sm">
+                        <span>Visit Live Project</span>
+                        <i class="fas fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Project Card 4: PerfumeShop -->
+            <div class="glass-card rounded-2xl overflow-hidden group" data-aos="fade-up" data-aos-delay="400">
+                <div class="relative h-72 overflow-hidden bg-navy-900">
+                    <iframe src="https://perfume-mocha-gamma.vercel.app" class="w-full h-full border-0 pointer-events-none scale-100 group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100" title="PerfumeShop Project Preview"></iframe>
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/20 to-transparent"></div>
+                </div>
+                <div class="p-8">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <span class="text-xs font-mono font-semibold text-pink uppercase tracking-wider">E-Commerce Store</span>
+                            <h4 class="font-display text-2xl font-bold mt-1">PerfumeShop</h4>
+                        </div>
+                        <a href="https://perfume-mocha-gamma.vercel.app" target="_blank" class="w-10 h-10 rounded-full bg-pink/20 hover:bg-pink text-pink hover:text-white flex items-center justify-center transition">
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                    <p class="text-slate-400 text-sm mb-6">
+                        An exquisite online boutique store built for luxury perfumes with immersive layouts and responsive user experience[cite: 4].
+                    </p>
+                    <a href="https://perfume-mocha-gamma.vercel.app" target="_blank" class="btn-pink w-full py-3.5 rounded-xl font-semibold flex items-center justify-center space-x-2 text-sm">
                         <span>Visit Live Project</span>
                         <i class="fas fa-arrow-right text-xs"></i>
                     </a>
@@ -411,12 +686,39 @@
 
     <!-- AOS Script for Scroll Animations -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    
+    <!-- Swiper.js JS for Certificates Slider -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
     <script>
         // Initialize Scroll Animations
         AOS.init({
             duration: 800,
             once: true,
             offset: 100
+        });
+
+        // Initialize Certificates Swiper Slider
+        const certificatesSwiper = new Swiper('.certificates-swiper', {
+            slidesPerView: 1,
+            spaceBetween: 24,
+            loop: true,
+            autoplay: {
+                delay: 3500,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                },
+                1024: {
+                    slidesPerView: 3,
+                },
+            },
         });
 
         // Typewriter Effect Script
@@ -440,7 +742,7 @@
             let typeSpeed = isDeleting ? 60 : 120;
 
             if (!isDeleting && charIndex === currentWord.length) {
-                typeSpeed = 2000; // Pause at end of word
+                typeSpeed = 2000;
                 isDeleting = true;
             } else if (isDeleting && charIndex === 0) {
                 isDeleting = false;
